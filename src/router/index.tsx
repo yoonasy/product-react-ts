@@ -11,7 +11,7 @@ function Redirect({ to, path }: any) {
 
   useEffect(() => {
     if (path === location.pathname) {
-      console.log('redirect:', path);
+      console.log('redirect:', to);
       navigate(to);
     }
   }, []);
