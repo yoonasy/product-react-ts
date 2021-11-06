@@ -30,7 +30,7 @@ export default function ProductMain() {
   /* effect */
   useEffect(() => {
     clearInterval(timer)
-    dispatch(fetchDataAsync({type, size})).finally(() => loopUpdate())
+    dispatch(fetchDataAsync({type, size})).finally(() => loopUpdate()) // 需要放到生命周期中请求vite中 放到外面会被react初始化 会请求两次
 
     return () => {
       console.log('Destructors 析构函数 -> componentWillUnmount')
