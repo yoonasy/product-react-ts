@@ -1,0 +1,213 @@
+.card:hover {
+  box-shadow: 0 8px 8px rgba(#0a1014, 0.15), 0 0 8px rgba(#0a1014, 0.15);
+  text-decoration: none;
+}
+
+.card {
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: box-shadow .5s;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 10px;
+
+  img {
+    height: 222px;
+    min-height: 222px;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  &.hidden {
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  &-wrap {
+    padding: 4px;
+  }
+}
+
+.productPrice {
+  font-family: arial, verdana, sans-serif !important;
+  color: #ff0036;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 0 5px;
+  letter-spacing: normal;
+  overflow: inherit !important;
+  white-space: nowrap;
+
+  em {
+    b {
+      margin-right: 2px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    font-family: arial;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ff0036;
+  }
+}
+
+.productTitle {
+  display: block;
+  color: #666;
+  height: 14px;
+  line-height: 12px;
+  margin-bottom: 3px;
+  word-break: break-all;
+  font-size: 0;
+  overflow: hidden;
+
+  * {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: #ff0036 !important
+    }
+  }
+}
+
+.productShop {
+  height: 22px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+
+  &-name {
+    display: inline-block;
+    line-height: 20px;
+    height: 20px;
+    max-width: 144px;
+    color: #999;
+    text-decoration: underline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    vertical-align: middle;
+
+    &:hover {
+      text-decoration: underline;
+      color: #ff0036 !important
+    }
+  }
+
+  &-type {
+    line-height: 20px;
+    font-size: 12px;
+    vertical-align: middle;
+    color: #1976d2;
+  }
+}
+
+.productStatus {
+  height: 32px;
+  border: none;
+  border-top: 1px solid #eee;
+  margin-bottom: 0;
+  color: #999;
+  white-space: nowrap;
+  display: flex;
+
+  * {
+    font-size: 12px;
+  }
+
+  em {
+    color: #b57c5b;
+  }
+
+  a {
+    color: #38b;
+  }
+
+  em, a {
+    margin-top: -8px;
+    font-family: arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  span {
+    display: inline-block;
+    border-right: 1px solid #eee;
+    padding: 10px 8px 10px 1px;
+    margin-right: 6px;
+    line-height: 12px;
+    text-align: left;
+    flex: 1;
+
+    &.aliww {
+      border-right: none;
+      text-align: center;
+      margin-right: 0;
+      padding-right: 4px;
+      padding-left: 4px;
+      flex: 0 0 auto;
+
+      a {
+        background: url(https://img.alicdn.com/tps/i1/T11lggFoXcXXc1v.nr-93-93.png) center center no-repeat!important;
+        background-size: 16px !important;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.productComment {
+  width: 70px;
+}
+
+.colorAnim {
+  animation: colorLight 2.4s ease-in;
+  display: block;
+}
+
+@keyframes colorLight {
+  0% {
+    opacity: 0;
+    color: #333;
+    transform: translateY(20%);
+  }
+  25% {
+    transform: translateY(0);
+    opacity: 1;
+    color: green;
+  }
+  50% {
+    color: #ff0036;
+  }
+  75% {
+    color: green;
+  }
+  100% {
+    color: #ff0036;
+  }
+}
