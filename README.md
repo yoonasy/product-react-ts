@@ -1,3 +1,12 @@
+# 启动项目
+```shell
+git clone https://github.com/yoonasy/product-react-ts.git
+
+cd product-react-ts/
+
+npm i && npm run dev
+```
+
 ## 采用`redux-ts` + `vite react-ts` 模板创建
 [`npx create-react-app my-app --template redux-typescript`](https://github.com/reduxjs/cra-template-redux-typescript)
 
