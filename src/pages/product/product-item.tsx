@@ -48,15 +48,13 @@ function ProductItem({data}: PropsType) {
       return
     }
 
-    if (priceRef.current) {
-      colorAnimate(priceRef.current)
-    }
+    priceRef.current && colorAnimate(priceRef.current)
+    descRef.current && colorAnimate(descRef.current)
 
-    if (descRef.current) {
-      colorAnimate(descRef.current)
-    }
-
-    return () => {}; // 析构函数Destructor
+    return () => { // 动画没执行完成卸载组件进行移除监听
+      priceRef.current && (priceRef.current.onanimationend = null)
+      descRef.current && (descRef.current.onanimationend = null)
+    }; // 析构函数Destructor
   }, [data]);
 
   return (
@@ -81,11 +79,8 @@ function ProductItem({data}: PropsType) {
 
         <p className="productStatus">
           <span>月成交 <em>{data.volume}+笔</em></span>
-          <span className="productComment">评价 <a
-            href="https://detail.tmall.com/data.htm?id=539062758214&amp;skuId=null&amp;areaId=511000&amp;cat_id=2&amp;is_b=1&amp;rn=633171671fc8b6785c699f49e46818df&amp;on_comment=1#J_TabBar"
-            target="_blank">9.6万</a></span>
-          <span className="aliww"><a className="ww-inline ww-online"
-                                     title="点此可以直接和卖家交流选好的宝贝，或相互交流网购体验，还支持语音视频噢。" /></span>
+          <span className="productComment">评价 <a href="https://detail.tmall.com/data.htm?id=539062758214&amp;skuId=null&amp;areaId=511000&amp;cat_id=2&amp;is_b=1&amp;rn=633171671fc8b6785c699f49e46818df&amp;on_comment=1#J_TabBar" target="_blank">9.6万</a></span>
+          <span className="aliww"><a className="ww-inline ww-online" title="点此可以直接和卖家交流选好的宝贝，或相互交流网购体验，还支持语音视频噢。" /></span>
         </p>
       </div>
     </div>
